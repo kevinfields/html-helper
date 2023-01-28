@@ -13,7 +13,6 @@ function App() {
           }
         />
       </Routes>
-      Ya
     </div>
   );
 }
