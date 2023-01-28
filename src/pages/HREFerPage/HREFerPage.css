@@ -1,0 +1,50 @@
+.info-box {
+
+  border: 1px solid black;
+  border-radius: 10px;
+  position: fixed;
+  width: 50%;
+  left: 25%;
+  height: 20%;
+  bottom: 20%;
+}
+
+.href-type-switch-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  position: fixed;
+  width: 20%;
+  left: 40%;
+  height: 5%;
+  top: 20%;
+}
+
+
+.href-page-input {
+  position: fixed;
+  height: 5%;
+  top: 35%;
+  width: 20%;
+  left: 40%;
+}
+
+
+@media (max-width: 767px) {
+
+  .info-box {
+    width: 70%;
+    left: 15%;
+  }
+
+  .href-type-switch-buttons {
+    width: 50%;
+    left: 25%;
+  }
+
+  .href-page-input {
+    width: 50%;
+    left: 25%;
+  }
+}
