@@ -7,5 +7,5 @@ export default function makePhoneHREF(number) {
   let filteredNumArr = numArr.filter(item => digits.includes(item));
   let newNums = filteredNumArr.join('');
 
-  return '<a href="tel:+1' + newNums + '">' + number + '</a';
+  return '<a href="tel:+1' + newNums + '">' + number + '</a>';
 }

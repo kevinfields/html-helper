@@ -30,6 +30,27 @@
   left: 40%;
 }
 
+.href-output-screen {
+  text-align: center;
+  width: 40%;
+  height: 10%;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: fixed;
+  left: 30%;
+  bottom: 21.5%;
+  overflow-x: scroll;
+}
+
+.href-switch-unselected {
+  color: gray;
+  background-color: white;
+}
+
+.href-switch-selected {
+  color: black;
+  background-color: lightgray;
+}
 
 @media (max-width: 767px) {
 
@@ -44,6 +65,11 @@
   }
 
   .href-page-input {
+    width: 50%;
+    left: 25%;
+  }
+
+  .href-output-screen {
     width: 50%;
     left: 25%;
   }
