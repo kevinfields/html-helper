@@ -5,7 +5,7 @@
   position: fixed;
   width: 50%;
   left: 25%;
-  height: 20%;
+  height: 30%;
   bottom: 20%;
 }
 
@@ -38,7 +38,7 @@
   border-radius: 10px;
   position: fixed;
   left: 30%;
-  bottom: 21.5%;
+  bottom: 25%;
   overflow-x: scroll;
 }
 

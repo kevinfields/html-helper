@@ -28,14 +28,34 @@ code {
   text-align: center;
 }
 
+.navbar {
+  position: fixed;
+  width: 8%;
+  left: 1%;
+  height: 50%;
+  top: 20%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
 
 @media (max-width: 767px) {
 
   .page {
     width: 94%;
-    height: 96%;
+    height: 76%;
     left: 3%;
     top: 2%;
   }
 
+  .navbar {
+    width: 90%;
+    left: 5%;
+    height: 20%;
+    top: 80%;
+    flex-direction: row;
+  }
+
 }
+
+
