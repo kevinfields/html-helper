@@ -1,0 +1,17 @@
+.homepage-email-link {
+  text-align: center;
+  text-decoration: underline;
+  position: fixed;
+  width: 20%;
+  left: 40%;
+  top: 35%;
+  height: 5%;
+}
+
+
+@media (max-width: 767px) {
+  .homepage-email-link {
+    width: 50%;
+    left: 25%;
+  }
+}
