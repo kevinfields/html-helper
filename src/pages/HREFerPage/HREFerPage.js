@@ -31,13 +31,13 @@ const HREFerPage = () => {
       <div className="page-content">
         <div className="href-type-switch-buttons">
           <button
-            className={"href-switch-" + address.type === 0 ? 'selected' : 'unselected'}
+            className={"href-switch-" + address.type === 0 ? "selected" : "unselected"}
             onClick={() => setAddress({...address, type: 0})}
           >
             Phone Number
           </button>
           <button
-            className={"href-switch-" + address.type === 1 ? 'selected' : 'unselected'}
+            className={"href-switch-" + address.type === 1 ? "selected" : "unselected"}
             onClick={() => setAddress({...address, type: 1})}
           >
             Email Address
