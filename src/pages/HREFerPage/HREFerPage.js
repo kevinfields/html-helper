@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import InfoBox from './components/InfoBox';
 import makeEmailHREF from './functions/makeEmailHREF';
 import makePhoneHREF from './functions/makePhoneHREF';
 import "./HREFerPage.css";
@@ -49,7 +50,7 @@ const HREFerPage = () => {
           value={address.input}
           onChange={(e) => setAddress({...address, input: e.target.value})}
         />
-        <div className="info-box">
+        {/* <div className="info-box">
           <ul>
             <li>
               Type: {address.type === 0 ? "Phone Number" : "Email"}
@@ -61,7 +62,11 @@ const HREFerPage = () => {
           <div className="href-output-screen">
             {output}
           </div>
-        </div>
+        </div> */}
+        <InfoBox
+          address={address}
+          output={output}
+        />
       </div>
     </div>
   )
