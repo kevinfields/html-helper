@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import HREFTypeSwitchButtons from './components/HREFTypeSwitchButtons';
 import InfoBox from './components/InfoBox';
 import makeEmailHREF from './functions/makeEmailHREF';
 import makePhoneHREF from './functions/makePhoneHREF';
@@ -44,25 +45,16 @@ const HREFerPage = () => {
             Email Address
           </button>
         </div>
+        {/* <HREFTypeSwitchButtons
+          address={address}
+          setAddress={(address, type) => setAddress({address: address, type: type})}
+        /> */}
         <input
           className="href-page-input"
           type="text"
           value={address.input}
           onChange={(e) => setAddress({...address, input: e.target.value})}
         />
-        {/* <div className="info-box">
-          <ul>
-            <li>
-              Type: {address.type === 0 ? "Phone Number" : "Email"}
-            </li>
-            <li>
-              Input: {address.input}
-            </li>
-          </ul>
-          <div className="href-output-screen">
-            {output}
-          </div>
-        </div> */}
         <InfoBox
           address={address}
           output={output}
