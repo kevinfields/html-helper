@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import EmailOptionButtons from './components/EmailOptionButtons';
 import HREFTypeSwitchButtons from './components/HREFTypeSwitchButtons';
 import InfoBox from './components/InfoBox';
 import makeEmailHREF from './functions/makeEmailHREF';
@@ -14,6 +15,14 @@ const HREFerPage = () => {
 
   const [output, setOutput] = useState('Invalid Address');
 
+  const addSubject = () => {
+    console.log('add subject here');
+  };
+
+  const addCCs = () => {
+    console.log('add ccs here');
+  }
+
   useEffect(() => {
 
     if (address.type === 1) {
@@ -24,31 +33,26 @@ const HREFerPage = () => {
       setOutput(makePhoneHREF(address.input));
     }
    
-  }, [address])
+  }, [address.type])
 
 
   return (
     <div className="page">
       <h3 className="page-header">Make an email or phone number an href tag</h3>
       <div className="page-content">
-        <div className="href-type-switch-buttons">
-          <button
-            className={"href-switch-" + address.type === 0 ? "selected" : "unselected"}
-            onClick={() => setAddress({...address, type: 0})}
-          >
-            Phone Number
-          </button>
-          <button
-            className={"href-switch-" + address.type === 1 ? "selected" : "unselected"}
-            onClick={() => setAddress({...address, type: 1})}
-          >
-            Email Address
-          </button>
-        </div>
-        {/* <HREFTypeSwitchButtons
+        <HREFTypeSwitchButtons
           address={address}
-          setAddress={(address, type) => setAddress({address: address, type: type})}
-        /> */}
+          addressSetterRef={(addrObj) => setAddress(addrObj)}
+        />
+        { 
+          address.type === 1 ?
+            <EmailOptionButtons
+              addSubject={() => addSubject()}
+              addCCs={() => addCCs()}
+            />
+          :
+            null
+        }
         <input
           className="href-page-input"
           type="text"

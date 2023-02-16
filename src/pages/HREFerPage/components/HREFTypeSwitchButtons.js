@@ -5,13 +5,13 @@ const HREFTypeSwitchButtons = (props) => {
     <div className="href-type-switch-buttons">
           <button
             className={"href-switch-" + props.address.type === 0 ? "selected" : "unselected"}
-            onClick={() => props.setAddress({...props.address, type: 0})}
+            onClick={() => props.addressSetterRef({...props.address, type: 0})}
           >
             Phone Number
           </button>
           <button
             className={"href-switch-" + props.address.type === 1 ? "selected" : "unselected"}
-            onClick={() => props.setAddress({...props.address, type: 1})}
+            onClick={() => props.addressSetterRef({...props.address, type: 1})}
           >
             Email Address
           </button>
