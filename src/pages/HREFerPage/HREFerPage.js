@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import EmailOptionButtons from './components/EmailOptionButtons';
+import ExtraInput from './components/ExtraInput';
 import HREFTypeSwitchButtons from './components/HREFTypeSwitchButtons';
 import InfoBox from './components/InfoBox';
 import makeEmailHREF from './functions/makeEmailHREF';
@@ -13,27 +14,47 @@ const HREFerPage = () => {
     type: 0,
   });
 
+  const [ccs, setCCs] = useState({
+    editing: false,
+    input: '',
+  });
+
+  const [subject, setSubject] = useState({
+    editing: false,
+    input: '',
+  })
+
   const [output, setOutput] = useState('Invalid Address');
 
   const addSubject = () => {
-    console.log('add subject here');
+    setSubject({
+      ...subject,
+      editing: true,
+    });
   };
 
   const addCCs = () => {
-    console.log('add ccs here');
-  }
+    setCCs({
+      ...ccs,
+      editing: true,
+    });
+  };
 
   useEffect(() => {
 
     if (address.type === 1) {
+      if (subject.input !== '') {
+        setOutput(makeEmailHREF(address.input, subject.input));
+      } else {
       setOutput(makeEmailHREF(address.input));
+      }
     }
 
     if (address.type === 0) {
       setOutput(makePhoneHREF(address.input));
     }
    
-  }, [address.type])
+  }, [address, subject, ccs])
 
 
   return (
@@ -46,10 +67,25 @@ const HREFerPage = () => {
         />
         { 
           address.type === 1 ?
-            <EmailOptionButtons
-              addSubject={() => addSubject()}
-              addCCs={() => addCCs()}
-            />
+            <div className="add-options-screen">
+              <EmailOptionButtons
+                addSubject={() => addSubject()}
+                addCCs={() => addCCs()}
+              />
+              {
+                subject.editing ?
+                  <ExtraInput
+                    type="subject"
+                    editSubject={(newSubject) => setSubject({...subject, input: newSubject})}
+                  />
+                : ccs.editing ?
+                  <ExtraInput
+                    type="ccs"
+                    editCCs={(newCC) => setCCs({...ccs, input: newCC})}
+                  />
+                : null
+              }
+            </div>
           :
             null
         }

@@ -62,6 +62,24 @@
   background-color: lightgray;
 }
 
+.extra-input-opts-ccs {
+  position: fixed;
+  left: 70%;
+  top: 25%;
+  height: 5%;
+  width: 15%;
+  border: 1px solid red;
+}
+
+.extra-input-opts-subject {
+  position: fixed;
+  left: 70%;
+  top: 25%;
+  height: 5%;
+  width: 15%;
+  border: 1px solid green;
+}
+
 @media (max-width: 767px) {
 
   .info-box {

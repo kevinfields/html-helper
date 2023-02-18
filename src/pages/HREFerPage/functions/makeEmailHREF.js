@@ -1,4 +1,7 @@
-export default function makeEmailHREF(address) {
+import makeValidSubject from "./makeValidSubject";
 
-  return '<a href="mailto:' + address + '">' + address + '</a>';
+export default function makeEmailHREF(address, subject) {
+
+  let subj = subject ? "?subject=" + makeValidSubject(subject) : '';
+  return '<a href="mailto:' + address + subj + '">' + address + '</a>';
 }
